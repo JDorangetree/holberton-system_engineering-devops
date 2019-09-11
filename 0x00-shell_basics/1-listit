@@ -1,4 +1,2 @@
 #!/bin/bash
-#list of your current directory
-
 ls
