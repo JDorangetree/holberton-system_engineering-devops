@@ -1,2 +1,2 @@
 #!/bin/bash
-find -type f -newer -maxdepth 0 -ls | head -n 10
+find -type f -newer -maxdepth 0 | ls -tx1 | head -n 10 
