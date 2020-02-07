@@ -7,9 +7,9 @@ HI_COUNTER=9
 while [ $COUNTER -lt 11 ]; do
     if [ "$COUNTER" -eq "$HI_COUNTER" ]
     then
-        echo $HELLO
+        echo "$HELLO"
     else
-        echo $STRING
+        echo "$STRING"
     fi
     ((COUNTER++))
 done
