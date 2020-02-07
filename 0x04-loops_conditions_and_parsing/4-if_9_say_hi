@@ -3,8 +3,8 @@
 STRING="Holberton School"
 HELLO="Hi"
 COUNTER=0
-HI_COUNTER=8
-while [ $COUNTER -lt 10 ]; do
+HI_COUNTER=9
+while [ $COUNTER -lt 11 ]; do
     if [ "$COUNTER" -eq "$HI_COUNTER" ]
     then
         echo "$HELLO"
