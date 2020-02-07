@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
 FILE="holbertonschool"
-if [ -e "$FILE" ]
+if [ -e $FILE ]
 then 
     echo "holbertonschool file exists"
-    if [ -s "$FILE" ]
+    if [ -s $FILE ]
     then
         echo "holbertonschool file is not empty"
     else
     echo "holbertonschool file is empty"
     fi
-    if [ -f "$FILE" ]
+    if [ -f $FILE ]
     then
     echo "holbertonschool is a regular file"
     fi
