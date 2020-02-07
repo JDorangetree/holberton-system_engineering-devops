@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+STRING="Holberton School"
+BAD="bad luck"
+GOOD="good luck"
+COUNTER=1
+while [ $COUNTER -le 10 ]; do
+    if [ "$COUNTER" -eq 4 ]
+    then
+        echo "$BAD"
+    elif [ $COUNTER -eq 8 ]
+    then
+        echo "$GOOD"
+    else
+        echo "$STRING"
+    fi
+    ((COUNTER++))
+done
