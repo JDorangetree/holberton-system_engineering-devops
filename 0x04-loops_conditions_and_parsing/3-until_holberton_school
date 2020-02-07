@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+STRING="Holberton School"
+i=1
+max=10
+until [ $i -gt $max ]; do
+    echo "$STRING"
+    ((i++))
+done
