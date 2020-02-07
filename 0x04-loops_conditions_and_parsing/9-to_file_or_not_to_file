@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
-# This script is displaying "Holberton School" 10 times
+# File test operators
 FILE="holbertonschool"
 if [ -e $FILE ]
 then 
-    echo "holbertonschool file exists"
+    echo "$FILE file exists"
     if [ -s $FILE ]
     then
-        echo "holbertonschool file is not empty"
+        echo "FILE file is not empty"
     else
-    echo "holbertonschool file is empty"
+    echo "$FILE file is empty"
     fi
     if [ -f $FILE ]
     then
-    echo "holbertonschool is a regular file"
+    echo "$FILE is a regular file"
     fi
 else
-    echo "holbertonschool file does not exists"
+    echo "$FILE file does not exists"
 fi
