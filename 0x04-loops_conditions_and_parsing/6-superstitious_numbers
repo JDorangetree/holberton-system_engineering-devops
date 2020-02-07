@@ -13,7 +13,7 @@ while [ $COUNTER -le 20 ]; do
             echo "bad luck from Italy"
         ;;
         * )
-            echo "$COUNTER"
+            echo $COUNTER
         ;;
     esac
     ((COUNTER++))
