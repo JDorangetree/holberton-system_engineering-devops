@@ -2,7 +2,7 @@
 # This script is displaying "Holberton School" 10 times
 STRING="Holberton School"
 HELLO="Hi"
-COUNTER=0
+COUNTER=1
 HI_COUNTER=9
 while [ $COUNTER -lt 11 ]; do
     if [ "$COUNTER" -eq "$HI_COUNTER" ]
