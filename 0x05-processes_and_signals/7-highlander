@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Bash script that displays: To infinity and beyond
 trap "echo I am invincible!!!" SIGTERM
-while :
+while ((1))
 do
     echo "To infinity and beyond"
 done
