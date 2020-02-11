@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 #Bash script that displays: To infinity and beyond
-trap to_print 15
-to_print()
-{
-    echo "I am invincible!!!";
-}
-while((1));
+trap "echo I am invincible!!!" SIGTERM
+while :
 do
     echo "To infinity and beyond"
-    sleep 2;
 done
