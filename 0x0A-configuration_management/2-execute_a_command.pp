@@ -1,6 +1,5 @@
 #kills a process named killmenow.
 exec { 'killmenow':
-  path     => '/usr/bin',
-  command  => 'pkill -x killmenow',
-  provider => shell,
+  path    => '/usr/bin',
+  command => 'pkill -x killmenow',
 }
