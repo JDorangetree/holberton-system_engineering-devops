@@ -8,5 +8,5 @@ then
     scp -o Stricthostkeychecking=no "$1" "$3@$2":~/
 elif [ "$#" -eq 4 ]
 then
-    scp -o Stricthostkeychecking=no "$1" "$3@$2":~/ -i "$4"
+    scp -o Stricthostkeychecking=no -i "$4" "$1" "$3@$2":~/
 fi
