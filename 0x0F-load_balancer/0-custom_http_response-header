@@ -2,9 +2,10 @@
 # Configures a custom a new server
 sudo apt-get update -y
 sudo apt-get install nginx -y
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
 new_string="server_name _;\n\trewrite ^\/redirect_me https://github.com/JDorangetree;"
 nstr1="\n\tadd_header X-Served-By \$hostname;"
 nstr2="\n\terror_page 404 \/404_error.html;\n\tlocation = \/404_error.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 sed -i "s/server_name _;/$new_string$nstr1$nstr2/" /etc/nginx/sites-available/default
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
 service nginx start
