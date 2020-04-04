@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Web Stack Debugging 1
-sudo rm /etc/nginx/sites-enabled/default | ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
 sudo rm /var/run/nginx.pid
