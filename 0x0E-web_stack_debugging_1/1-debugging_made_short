@@ -2,4 +2,4 @@
 # Web Stack Debugging 1
 sudo rm /etc/nginx/sites-enabled/default | ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
-sudo rm /var/run/nginx.pid
+kill -TERM "$(cat /var/run/nginx.pid)"
