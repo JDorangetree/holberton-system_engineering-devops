@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# script that will display information about subdomains
+
+funcion (){
+    List="www lb-01 web-01 web-02" 
+    arr=($List)
+    i=0 
+    if [ -n "$2" ]
+    then
+        SUB_DOMAIN=$2
+        RECORD_TYPE=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | grep -A1 $2 | awk '{print$4}')
+        DESTINATION=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | grep -A1 $2 | awk '{print$5}')
+        echo "The subdomain $SUB_DOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
+    else
+        while [ $i -lt 4 ]; do
+            SUB_DOMAIN=${arr[i]}
+            RECORD_TYPE=$(dig ${arr[i]}.$1 | grep -A1 'ANSWER SECTION:' | grep -A1 ${arr[i]} | awk '{print$4}')
+            DESTINATION=$(dig ${arr[i]}.$1 | grep -A1 'ANSWER SECTION:' | grep -A1 ${arr[i]} | awk '{print$5}')
+            echo "The subdomain $SUB_DOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
+            ((i++))
+        done
+    fi
+    return 0
+}
+funcion $1 $2
