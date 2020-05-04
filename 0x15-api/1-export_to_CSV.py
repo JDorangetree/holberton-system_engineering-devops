@@ -23,7 +23,7 @@ typicode.com/users/{}/todos'.format(user_id)).json()
         title = item["title"]
         row = [user_id, name, completed, title]
         rows.append(row)
-    with open("{}.csv".format(user_id), "w") as csvfile:
+    with open("{}.csv".format(user_id), "w", newline="") as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',',
                                 quotechar='"', quoting=csv.QUOTE_ALL)
         spamwriter.writerows(rows)
