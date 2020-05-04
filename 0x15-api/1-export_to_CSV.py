@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+import csv
 import requests
 from sys import argv
-import csv
 import os
 
 if __name__ == "__main__":
@@ -13,14 +13,14 @@ if __name__ == "__main__":
         exit()
     user_dict = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                              .format(user_id)).json()
-    name = user_dict["username"]
+    name = user_dict.get("username")
     list_of_dict = requests.get('https://jsonplaceholder.\
 typicode.com/users/{}/todos'.format(user_id)).json()
     rows = []
     for item in list_of_dict:
-        user_id = (item["userId"])
-        completed = (item["completed"])
-        title = item["title"]
+        user_id = item.get("userId")
+        completed = item.get("completed")
+        title = item.get("title")
         row = [user_id, name, completed, title]
         rows.append(row)
     with open("{}.csv".format(user_id), "w", newline="") as csvfile:
