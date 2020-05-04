@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import csv
+import os
 import requests
 from sys import argv
-import os
 
 if __name__ == "__main__":
     try:
