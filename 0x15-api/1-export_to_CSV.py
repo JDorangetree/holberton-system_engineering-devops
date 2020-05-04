@@ -5,8 +5,11 @@ import csv
 import os
 
 if __name__ == "__main__":
-    user_id = int(argv[1])
-    if user_id > 10:
+    try:
+        user_id = int(argv[1])
+    except ValueError:
+        exit()
+    if int(user_id) > 10:
         exit()
     user_dict = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                              .format(user_id)).json()
