@@ -16,5 +16,7 @@ def number_of_subscribers(subreddit):
 
     user_dict = user_dict.json()
     data = user_dict.get("data")
-    number_of_subscribers = data["subscribers"]
-    return number_of_subscribers
+    if data:
+        number_of_subscribers = data["subscribers"]
+        return number_of_subscribers
+    return 0
