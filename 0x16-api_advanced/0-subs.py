@@ -2,6 +2,7 @@
 """and returns the number of subscribers of a subreddit"""
 from requests import get
 
+
 def number_of_subscribers(subreddit):
     """ Returns subscriber count of subreddit"""
 
@@ -13,4 +14,5 @@ def number_of_subscribers(subreddit):
         return 0
 
     data = subreddit_dict.get("data")
-    return subscribers = data["subscribers"]
+    subscribers = data["subscribers"]
+    return subscribers
