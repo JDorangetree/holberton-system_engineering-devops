@@ -7,7 +7,7 @@ def number_of_subscribers(subreddit):
     """ Returns subscriber count of subreddit"""
 
     url = 'https://www.reddit.com//r/{}/about.json'.format(subreddit)
-    user_agent = {"User-Agent": "android:com.example.myredditapp:v1.2.3"}
+    user_agent = {"User-Agent": "myredditapp:v1.2.3"}
     subreddit_dict = get(url, headers=user_agent, allow_redirects=False)
 
     if subreddit_dict.status_code != 200:
