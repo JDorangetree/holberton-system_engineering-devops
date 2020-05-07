@@ -17,5 +17,6 @@ def number_of_subscribers(subreddit):
     except ValueError:
         return 0
     data = subreddit_dict.get("data")
-    subscribers = data["subscribers"]
+    if data:
+        subscribers = data["subscribers"]
     return subscribers
