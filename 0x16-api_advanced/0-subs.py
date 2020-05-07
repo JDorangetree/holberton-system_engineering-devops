@@ -12,11 +12,10 @@ def number_of_subscribers(subreddit):
 
     if subreddit_dict.status_code != 200:
         return 0
-
     try:
         subreddit_dict = subreddit_dict.json()
-    except:
+    except ValueError:
         return 0
     data = subreddit_dict.get("data")
-    number_of_subscribers = data["subscribers"]
-    return number_of_subscribers
+    subscribers = data["subscribers"]
+    return subscribers
