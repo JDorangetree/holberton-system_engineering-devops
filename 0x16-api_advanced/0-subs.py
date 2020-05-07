@@ -6,17 +6,14 @@ from requests import get
 def number_of_subscribers(subreddit):
     """ Returns subscriber count of subreddit"""
 
-    url = 'https://www.reddit.com//r/{}/about.json'.format(argv[1])
+    url = 'https://www.reddit.com//r/{}/about.json'.format(subreddit)
     user_agent = {"User-Agent": "android:com.example.myredditapp:v1.2.3"}
-    user_dict = get(url, headers=user_agent, allow_redirects=False)
+    subreddit_dict = get(url, headers=user_agent, allow_redirects=False)
 
-    if user_dict.status_code != 200:
+    if subreddit_dict.status_code != 200:
         return 0
 
-    user_dict = user_dict.json()
-    data = user_dict.get("data")
-    if data:
-        number_of_subscribers = data["subscribers"]
-        if number_of_subscribers:
-            return number_of_subscribers
-    return 0
+    subreddit_dict = subreddit_dict.json()
+    data = subreddit_dict.get("data")
+    number_of_subscribers = data["subscribers"]
+    return number_of_subscribers
