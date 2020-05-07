@@ -19,4 +19,6 @@ def number_of_subscribers(subreddit):
     data = subreddit_dict.get("data")
     if data:
         subscribers = data["subscribers"]
-    return subscribers
+        if subscribers:
+            return subscribers
+    return 0
