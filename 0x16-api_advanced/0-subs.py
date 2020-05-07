@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 from requests import get
-from sys import argv
 """and returns the number of subscribers of a subreddit"""
 
 
