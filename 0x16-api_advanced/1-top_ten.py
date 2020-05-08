@@ -12,14 +12,14 @@ def top_ten(subreddit):
 
     if hot_dict.status_code != 200:
         print(None)
-
-    hot_dict = hot_dict.json()
-    data = hot_dict.get("data")
-    children = data.get("children")
-    list_of_post = []
-    for i in children:
-        post = i.get("data")
-        title = post.get("title")
-        list_of_post.append(title)
-    for i in list_of_post:
-        print(i)
+    else:
+        hot_dict = hot_dict.json()
+        data = hot_dict.get("data")
+        children = data.get("children")
+        list_of_post = []
+        for i in children:
+            post = i.get("data")
+            title = post.get("title")
+            list_of_post.append(title)
+        for i in list_of_post:
+            print(i)
