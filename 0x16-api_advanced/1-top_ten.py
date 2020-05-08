@@ -11,7 +11,7 @@ def top_ten(subreddit):
     hot_dict = get(url, headers=user_agent, allow_redirects=False)
 
     if hot_dict.status_code != 200:
-        return 0
+        print(None)
 
     hot_dict = hot_dict.json()
     data = hot_dict.get("data")
